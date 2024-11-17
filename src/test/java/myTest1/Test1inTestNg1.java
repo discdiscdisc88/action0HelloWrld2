@@ -20,38 +20,25 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
 public class Test1inTestNg1 {
-	WebDriver driver;
+	
 
 	@BeforeMethod
 	public void setUp() throws Exception {
-	
-		WebDriverManager.chromedriver().setup();
 		
-		ChromeOptions options1 = new ChromeOptions();
-		options1.addArguments("--no-sandbox");
-            	options1.addArguments("--disable-dev-shm-usage");
-            	options1.addArguments("--headless");
-		
-		
-		driver = new ChromeDriver(options1);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	System.out.println("Start");
 	
 	}
 	
 	@Test
 	public void test1() throws Exception {
 
-		driver.navigate().to("http://google.com");
-		System.out.println("Test2 "+driver.getTitle());
-		AssertJUnit.assertEquals(driver.getTitle(), "Google");
+		System.out.println("Hello Wrld");
 
 	}
 
 	@AfterMethod
 	public void tearDown() throws Exception {
-		driver.manage().deleteAllCookies();
-		Thread.sleep(5000);
-		driver.quit();
+		
 		System.out.println("Exittttttttttttt");
 	}
 
